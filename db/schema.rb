@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722131301) do
+ActiveRecord::Schema.define(version: 20160722173700) do
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",   null: false
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20160722131301) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
+    t.index ["provider"], name: "index_users_on_provider"
+    t.index ["uid"], name: "index_users_on_uid"
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "video_embed"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
