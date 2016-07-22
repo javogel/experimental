@@ -1,13 +1,28 @@
 var Helloworld = React.createClass({
 
+  getInitialState: function(){
+    return {
+      counter: ''
+    };
+  },
 
-render: function(){
+  submitCallback: function(value){
+    console.log(value);
 
-return(
-<div> My name is Johannus
-  <Another title={this.props.something}> </Another>
+    this.setState({
+      value: value
+    })
+  },
 
-</div>
+  render: function(){
+
+    return(
+      <div> My name is {this.state.value}
+        <Another title={this.props.something}> </Another>
+        <Counter/>
+        <Input onSubmitCallback={this.submitCallback}/>
+
+      </div>
 );
 }
 });

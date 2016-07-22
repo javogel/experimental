@@ -26,6 +26,7 @@ var Counter = React.createClass({
   render: function(){
     return (
       <div>
+        <h3>This is a simple counter to tell to keep track of your button clicking abilities:</h3>
         <h4>{this.state.counter}</h4>
         <button onClick={this.incrementCounter}>Increment</button>
         <button onClick={this.decrementCounter}>Decrement</button>
