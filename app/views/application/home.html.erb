@@ -3,9 +3,9 @@
 
 <%= react_component('Helloworld', {something: @title}) %>
 
-<li><%= link_to 'Facebook', '/auth/facebook' %></li>
+<span class="fb-login"><%= link_to image_tag("facebook-login.png"), '/auth/facebook' %></span>
 
-
+<%= link_to 'New Video', new_video_path %>
 
 
 <% if current_user %>
